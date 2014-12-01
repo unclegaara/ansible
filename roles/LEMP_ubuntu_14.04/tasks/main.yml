@@ -1,0 +1,12 @@
+- name: install pkg's
+  apt:
+      update_cache=yes
+      cache_valid_time=172800
+      pkg={{item}} state=installed
+  with_items:
+    - nginx-full
+    - php5-fpm
+    - php5
+    - php5-mysql
+    - mariadb-server
+    - mariadb-client

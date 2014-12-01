@@ -1,0 +1,5 @@
+- name: LEMP_ubuntu_14.04
+  hosts: aakf
+  user: root
+  roles:
+  - LEMP_ubuntu_14.04

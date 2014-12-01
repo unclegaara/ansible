@@ -8,6 +8,8 @@
     - nload
     - vim
     - screen
+    - tzdata
+    - language-pack-ru
 
 - name: set sysctl params
   sysctl: name={{item.name}} value={{item.value}} state=present reload=yes
@@ -17,3 +19,6 @@
     - {name: net.ipv6.conf.default.disable_ipv6, value: 1}
     - {name: net.ipv6.conf.lo.disable_ipv6, value: 1}
 
+- name: set timezone
+  template: src=timezone.j4 dest=/etc/timezone owner=root mode=0644
+  notify: set timezone
