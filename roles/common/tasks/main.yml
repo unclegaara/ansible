@@ -11,6 +11,11 @@
     - tzdata
     - language-pack-ru
 
+
+- name: update tzdata
+  apt:
+      pkg=tzdata state=latest 
+
 - name: set sysctl params
   sysctl: name={{item.name}} value={{item.value}} state=present reload=yes
   with_items:
