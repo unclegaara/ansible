@@ -29,3 +29,6 @@
 - name: set timezone
   template: src=timezone.j4 dest=/etc/timezone owner=root mode=0644
   notify: set timezone
+
+- name: set up authorized keys
+  authorized_key: user=root path='/root/.ssh/authorized_keys' key="{{ lookup('file', 'ssh_keys/pub_keys')}}" manage_dir=no
