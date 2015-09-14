@@ -12,7 +12,8 @@
     - language-pack-ru
     - rsync
     - ntp
-
+    - snmp
+    - snmpd
 
 - name: update tzdata
   apt:
